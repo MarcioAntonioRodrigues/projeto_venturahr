@@ -1,0 +1,83 @@
+<section class="principal">
+	<article class="search-job">
+		<div>
+			<input type="search" placeholder="cargo, palavra chave ou nome da empresa" 
+			[(ngModel)]="termoBusca" (keydown.enter)="buscarVagas()">
+			<button class="btn btn-search" (click)="buscarVagas()">Achar Vagas</button>
+		</div>
+	</article>
+	<div class="divisor-line"></div>
+	<div *ngIf="searchLoading" class="loading">
+		<div>
+			<mat-spinner></mat-spinner>
+			<p>
+				Carregando resultados...
+			</p>
+		</div>
+	</div>
+	<main>
+		<article class="jobs-list">
+			<div class="title">
+				<h1>
+				   {{vagasEncontradas.length > 0 ? 
+					"Resultados da busca: " + "'" + termoBusca + "'" :
+				   'Não foi encontrado nenhum resultado'}}
+				</h1>
+			</div>
+			<div class="list-of-jobs vaga-container" *ngFor="let item of vagas">
+				<article>
+					<p class="titulo">
+						{{item.vaga?.cargo}}
+					</p>
+					<p>
+						{{item.empresa?.nome}}
+					</p>
+					<p>
+						{{item.empresa?.endereco.cidade + ', ' + 
+						item.empresa?.endereco.logradouro}}
+					</p>
+					<p class="remuneracao">
+						R$ {{item.vaga?.remuneracao}} por mês
+					</p>
+					<ul>
+						<li>
+							{{item.vaga?.descricao}}
+						</li>
+						<li *ngFor="let criterio of item.criterios">
+							{{criterio.nome + ', ' + criterio.descricao}}
+						</li>
+					</ul>
+					<p class="data">
+						Criada em: {{item.vaga?.dataCriacao | date:'medium'}}
+					</p>
+				</article>
+			</div>
+		</article>
+		<div *ngIf="tipoUsuario != 2" class="receber-vaga vaga-container">
+			<p>
+				Receba as novas vagas desta busca por e-mail (Grátis)
+			</p>
+			<label for="email-busca"></label>
+			<input type="text" name="email-busca">
+			<p>
+				Ao criar um alerta de vagas, você concorda com nossos Termos.
+				Você pode alterar as configurações de consentimento a qualquer 
+				momento por meio do cancelamento da inscrição ou conforme o 
+				procedimento detalhado em nossos termos.
+			</p>
+			<button class="btn btn-search">Ativar</button>
+		</div>
+		<div *ngIf="tipoUsuario == 2" class="publicar-vaga vaga-container">
+			<p>
+				Encontre sua próxima contratação rapidamente.
+			</p>
+			<p>
+				Você já sabe qual candidato encontrar.
+			</p>
+			<p>
+				E nós sabemos como ajudar você.
+			</p>
+			<button class="btn btn-search" [routerLink]="['/cadastroVagas']">Anunciar uma vaga</button>
+		</div>
+	</main>
+</section>

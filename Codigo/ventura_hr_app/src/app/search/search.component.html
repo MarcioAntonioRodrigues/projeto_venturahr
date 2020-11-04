@@ -1,0 +1,67 @@
+<ion-content>
+	<div class="search-area">
+		<div class="container">
+			<form (ngSubmit)="buscarVagas()">
+				<!-- <label for="buscarVagas">
+					O quê
+				</label> -->
+				<ion-input type="text" [(ngModel)]="termoBusca" name="buscarVagas" 
+						placeholder="cargo, palavra-chave ou empresa"></ion-input>
+				<!-- <label for="onde">
+					Onde
+				</label>
+				<ion-input type="text" name="onde" placeholder="cidade, estado ou região"></ion-input> -->
+				<ion-button expand="full" type="submit">Achar Vagas</ion-button>
+			</form>
+			<p>{{vagas.length}} vagas encontradas</p>
+		</div>
+	</div>
+	<ion-list>
+		<ion-item class="list-of-jobs vaga-container" *ngFor="let item of vagas"
+		(click)="presentModal(item)">
+			<article>
+				<p class="titulo">
+					{{item.vaga?.cargo}}
+				</p>
+				<p>{{item.vaga?.tipoVaga == 1 ? 'Estágio' : 'CLT'}}</p>
+				<!-- <p>
+					{{item.empresa?.nome}}
+				</p> -->
+				<!-- <p>
+					{{item.empresa?.endereco.cidade + ', ' + 
+					item.empresa?.endereco.logradouro}}
+				</p> -->
+				<p class="remuneracao">
+					R$ {{item.vaga?.remuneracao}} por mês
+				</p>
+				<!-- <ul>
+					<li>
+						{{item.vaga?.descricao}}
+					</li>
+					<li *ngFor="let criterio of item.criterios">
+						{{criterio.nome + ', ' + criterio.descricao}}
+					</li>
+				</ul> -->
+				<p class="data">
+					Criada em: {{item.vaga?.dataCriacao | date:'medium'}}
+				</p>
+			</article>
+		</ion-item>	
+	</ion-list>
+</ion-content>
+<ion-toolbar>
+	<ion-tabs>
+		<ion-tab-bar slot="bottom">
+			<ion-tab-button tab="backPage" routerlink="[]">
+				<ion-icon name="home-outline"></ion-icon>
+				<ion-label>Página inicial</ion-label>
+				<!-- <ion-badge>6</ion-badge> -->
+			</ion-tab-button>
+		
+			<ion-tab-button tab="homePage">
+				<ion-icon name="person-outline"></ion-icon>
+				<ion-label>Perfil</ion-label>
+			</ion-tab-button>
+		</ion-tab-bar>
+	</ion-tabs>
+</ion-toolbar>

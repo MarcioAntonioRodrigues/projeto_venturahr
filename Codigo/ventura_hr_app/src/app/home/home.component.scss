@@ -1,0 +1,50 @@
+ion-icon
+{
+	right: 10px;
+	font-size: 1.2rem;
+	position: absolute;
+}
+
+// ion-input
+// {
+// 	border-radius: 5px;
+// 	padding: 0 10px !important;
+// 	border: 1px solid rgba(0,0,0,.2);
+// }
+
+ion-button
+{
+	margin: 20px 0;
+}
+
+ion-searchbar
+{
+	padding: 0;
+	border-radius: 5px;
+}
+
+.container
+{
+	width: 80%;
+	margin: 5rem auto 20px;
+}
+
+.container label,
+.container input
+{
+	display: block;
+}
+
+.container label
+{
+	font-weight: bold;
+	margin: 20px 0 10px;
+}
+
+img.logo-ventura
+{
+	top: 1rem;
+	width: 10rem;
+	position: relative;
+	left: calc(50% - 100px);
+}

@@ -1,0 +1,78 @@
+<article class="principal-container">
+	<section class="principal">
+		<div class="tipo-conta">
+			<h1>
+				Crie a sua conta
+			</h1>
+			<div>
+				<select [(ngModel)]="tipoConta" name="tipoConta" id="tipoConta" required>
+					<option value="" disabled>Selecione o tipo de conta</option>
+					<option value="1">Candidato</option>
+					<option value="2">Empresa</option>
+				</select>
+			</div>
+		</div>
+		<form (ngSubmit)="registerUser()" #candidatoForm="ngForm">
+			<div class="basic-margin">
+				<label for="nome">Nome</label>
+				<input type="text" [(ngModel)]="usuario.Nome" name="nome" required>
+			</div>
+			<div class="basic-margin" *ngIf="tipoConta == '1'">
+				<label for="cpf">CPF</label>
+				<input type="text" [(ngModel)]="usuario.Cpf" name="cpf" required>
+			</div>
+			<div class="basic-margin" *ngIf="tipoConta != '1'">
+				<label for="cnpj">CNPJ</label>
+				<input type="text" [(ngModel)]="usuario.CNPJ" name="cnpj" required>
+			</div>
+			<div class="basic-margin">
+				<label for="endereco">Cidade</label>
+				<input type="text" [(ngModel)]="usuario.Endereco.Cidade" name="endereco" required>
+			</div>
+			<div class="basic-margin">
+				<label for="endereco">Estado</label>
+				<input type="text" [(ngModel)]="usuario.Endereco.Estado" name="endereco" required>
+			</div>
+			<div class="basic-margin">
+				<label for="endereco">Logradouro</label>
+				<input type="text" [(ngModel)]="usuario.Endereco.Logradouro" name="endereco" required>
+			</div>
+			<div class="basic-margin">
+				<label for="endereco">CEP</label>
+				<input type="text" [(ngModel)]="usuario.Endereco.Cep" name="endereco" required>
+			</div>
+			<div class="basic-margin">
+				<label for="telefone">Telefone</label>
+				<input type="text" [(ngModel)]="usuario.Telefone" name="telefone" required>
+			</div>
+			<div class="basic-margin" *ngIf="tipoConta == '1'">
+				<label for="sexo">Sexo</label>
+				<select [(ngModel)]="usuario.Sexo" name="sexo" id="sexo" required>
+					<option value="" disabled>Selecione uma opção</option>
+					<option value="Masculino">Masculino</option>
+					<option value="Feminino">Feminino</option>
+				</select>
+			</div>
+			<div class="basic-margin" *ngIf="tipoConta == '1'">
+				<label for="datanascimento">Data de nascimento</label>
+				<input type="text" [(ngModel)]="usuario.DataNascimento" name="datanascimento" required>
+			</div>
+			<div class="basic-margin">
+				<label for="email">Email</label>
+				<input type="email" [(ngModel)]="usuario.Email" name="email" required>
+			</div>
+			<div class="basic-margin">
+				<label for="senha">Senha</label>
+				<input type="text" [(ngModel)]="usuario.Senha" name="senha" required>
+			</div>
+			<div class="basic-margin">
+				<label for="senha">Confirme a sua Senha</label>
+				<input type="text" [(ngModel)]="confirmaSenha" name="confirmaSenha" required>
+			</div>
+			<button type="submit" class="basic-margin btn btn-secondary" [disabled]="!candidatoForm.form.valid">Salvar</button>
+		</form>
+	
+		<p *ngIf="errorPasswordMessage">A confirmação da senha está incorreta</p>
+		
+	</section>
+</article>

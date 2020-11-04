@@ -1,0 +1,22 @@
+<section class="principal">
+	<img src="assets/img/ventura-logotipo.svg" alt="" [routerLink]="['/home']">
+	<!-- <h1>VENTURAHR</h1> -->
+	<form action="">
+		<div>
+			<label for="">E-mail</label>
+			<input [(ngModel)]="usuario.Email" name="username" type="text">
+			<label for="">Senha</label>
+			<input [(ngModel)]="usuario.Senha" name="senha" type="password">
+			<p *ngIf="erroMessageFlag">Usuário ou senha errados</p>
+			<button mat-flat-button (click)="login()">Entrar</button>
+		</div>
+	</form>
+	<article>
+		<p>
+			Novo no Ventura HR? 
+			<a [routerLink]="['/cadastro']">
+				Crie uma conta.
+			</a> 
+		</p>
+	</article>
+</section>

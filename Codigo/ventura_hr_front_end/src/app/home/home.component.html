@@ -1,0 +1,53 @@
+<section class="principal">
+	<article class="search-job">
+		<div>
+			<input type="search" placeholder="cargo, palavra chave ou nome da empresa" 
+			[(ngModel)]="termoDeBusca" (keydown.enter)="buscarVagas()">
+			<button class="btn btn-search" (click)="buscarVagas()">Achar Vagas</button>
+			<p>
+				<span>Cadastre seu currículo grátis! - </span>
+				É grátis e leva apenas alguns minutos
+			</p>
+			<p>
+				<span>Apenas para empresas: Anuncie sua vaga - </span>
+				Sua próxima contratação está aqui!
+			</p>
+		</div>
+	</article>
+</section>
+<div class="divisor-line"></div>
+<section class="buscas-populares">
+	<main>
+		<div class="sub-title">
+			<h2>Buscas populares</h2>
+		</div>
+		<article class="popular-list">
+			<div *ngFor="let item of popularSearchList" (click)="buscarVagaPopular(item)">
+				<i class="fa fa-search"></i>
+				<p>{{item}}</p>
+			</div>
+		</article>
+		<!-- <article class="jobs-list">
+			<div class="list-of-jobs" *ngFor="let emprego of vagasEmprego">
+				<article>
+					<p class="titulo">
+						{{emprego.cargo}}
+					</p>
+					<p class="data">
+						{{emprego.dataCriacao | date:'medium'}}
+					</p>
+					<p class="descricao">
+						{{emprego.descricao}}
+					</p>
+				</article>
+				<button class="btn btn-primary">Descrição completa</button>
+			</div>
+		</article>
+		<article class="jobs-aside">
+			<div class="publish-job" *ngIf="tipoUsuario == '2'">
+				<p>Publicar nova vaga de emprego</p>
+				<button class="btn btn-primary" [routerLink]="['/cadastroVagas']">Publicar vaga</button>
+			</div>
+		</article> -->
+	</main>
+</section>

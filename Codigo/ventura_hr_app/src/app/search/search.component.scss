@@ -1,0 +1,35 @@
+
+ion-input
+{
+	border-radius: 5px;
+	padding: 0 10px !important;
+	border: 1px solid rgba(0,0,0,.2);
+}
+
+ion-button
+{
+	margin: 20px 0;
+}
+
+div.search-area
+{
+	border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.container
+{
+	width: 80%;
+	margin: 20px auto;
+}
+
+.container label,
+.container input
+{
+	display: block;
+}
+
+.container label
+{
+	font-weight: bold;
+	margin: 20px 0 10px;
+}

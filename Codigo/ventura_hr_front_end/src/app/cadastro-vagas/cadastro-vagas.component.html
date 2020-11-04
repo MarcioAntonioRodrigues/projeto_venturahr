@@ -1,0 +1,91 @@
+<article class="principal-container">
+	<section class="principal">
+		<div class="tipo-conta">
+			<h1>
+				Crie a sua vaga
+			</h1>
+		</div>
+		<form (ngSubmit)="saveVaga()" #vagaForm="ngForm">
+			<div class="basic-margin cargo-field">
+				<label for="cargo">Cargo</label>
+				<input type="text" [(ngModel)]="vaga.Cargo" name="cargo" required>
+			</div>
+			<div class="basic-margin tipo-vaga-field">
+				<label for="tipoVaga">Forma de contratação</label>
+				<select [(ngModel)]="tipoVaga" name="tipoVaga" id="tipoVaga" required>
+					<option value="" disabled>Selecione uma opção</option>
+					<option *ngFor="let tipo of tiposVaga" 
+						[value]="tipo.valor">{{tipo.tipo}}
+					</option>
+				</select>
+			</div>
+			<div class="basic-margin description-field">
+				<label for="descricao">Descrição</label>
+				<input type="text" [(ngModel)]="vaga.Descricao" name="descricao" required>
+			</div>
+			<div class="basic-margin remuneracao-field">
+				<label for="remuneracao">Remuneração</label>
+				<input type="number" [(ngModel)]="vaga.Remuneracao" name="remuneracao" required>
+			</div>
+			<div class="criterio-container">
+				<label>Adicionar critérios (necessário adicionar 4)</label>
+				<div class="criterio-area">
+					<article>
+						<div class="basic-margin criterio-input-area">
+							<label for="criterioName">Nome</label>
+							<input type="text" [(ngModel)]="criterio.Nome" name="criterioName" class="criterio-input">
+						</div>
+						<div class="basic-margin criterio-select-area">
+							<label for="PMD">PMD</label>
+							<select [(ngModel)]="criterio.PMD" name="PMD" id="PMD" class="criterio-option">
+								<option value="" disabled>Selecione uma opção</option>
+								<option *ngFor="let value of valuesList"
+									[value]="value">{{value}}
+								</option>
+							</select>
+						</div>
+						<div class="basic-margin criterio-input-area">
+							<label for="criterioDescritption">Descrição</label>
+							<input type="text" [(ngModel)]="criterio.Descricao" name="criterioDescritption" class="criterio-input">
+						</div>
+						<div class="basic-margin criterio-select-area">
+							<label for="Peso">Peso</label>
+							<select [(ngModel)]="criterio.Peso" name="peso" id="peso" class="criterio-option">
+								<option value="" disabled>Selecione uma opção</option>
+								<option *ngFor="let value of valuesList"
+									[value]="value">{{value}}
+								</option>
+							</select>
+						</div>
+						<div class="basic-margin" *ngIf="criterioError.flag">
+							<p class="error-item">{{criterioError.message}}</p>
+						</div>
+					</article>
+					<span class="btn btn-primary" (click)="addCriteria()">+</span>
+				</div>
+			</div>
+			<div class="selected-criteria">
+				<label>Citérios selecionados</label>
+				<article>
+					<p class="criterio-nome">Nome</p>
+					<p class="criterio-descricao">Descrição</p>
+					<p class="criterio-pmd">PMD</p>
+					<p class="criterio-peso">Peso</p>
+					<i></i>
+				</article>
+				<article class="criteria-value" *ngFor="let criterio of listaDeCriterios">
+					<p class="criterio-nome">{{criterio.Nome}}</p>
+					<p class="criterio-descricao">{{criterio.Descricao}}</p>
+					<p class="criterio-pmd">{{criterio.PMD}}</p>
+					<p class="criterio-peso">{{criterio.Peso}}</p>
+					<i class="fa fa-trash-o error-item" aria-hidden="true"
+					(click)="removeCriteria(criterio)"></i>
+				</article>
+			</div>
+			<button type="submit" class="basic-margin btn btn-primary" 
+				[disabled]="!vagaForm.form.valid || !checkListaCriteria()">
+				Cadastrar
+			</button>
+		</form>
+	</section>
+</article>

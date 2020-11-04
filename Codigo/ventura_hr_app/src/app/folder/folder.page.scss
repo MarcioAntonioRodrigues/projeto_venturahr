@@ -1,0 +1,78 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+ion-input
+{
+	border-radius: 5px;
+	padding: 0 10px !important;
+	border: 1px solid rgba(0,0,0,.2);
+}
+
+ion-button
+{
+	margin: 20px 0;
+}
+
+#container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80%;
+  margin: 0 auto;
+
+	label
+	{
+		display: block;
+		font-weight: bold;
+		margin: 20px 0 10px;
+	}
+
+	p.login-fail
+	{
+		color: red;
+		position: absolute;
+		left: calc(50% - 100px);
+	}
+
+	div.cadastro
+	{
+		text-align: center;
+	}
+
+	div.cadastro p
+	{
+		margin-top: 50px;
+		color: #3578dc;
+		font-weight: bold;
+	}
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+div.logo
+{
+	margin-top: 4rem;
+	text-align: center;
+}
+
+div.logo img
+{
+	width: 12rem;
+}

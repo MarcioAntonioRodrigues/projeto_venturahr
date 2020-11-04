@@ -1,0 +1,88 @@
+<section class="header">
+	<article>
+		<div class="menus-container">
+			<ul class="menu-principal">
+				<li>
+					<h1 [routerLink]="['/home']">VENTURA HR</h1>
+				</li>
+				<li [routerLink]="['/home']"
+					[ngClass]="{'selected-option': typeOption == 1}"
+					(click)="selectOption(1)">Achar Vagas
+				</li>
+				<li [ngClass]="{'selected-option': typeOption == 2}"
+					(click)="selectOption(2)">Avaliações de Empresas
+				</li>
+				<li *ngIf="tipoUsuario == 2" 
+					[ngClass]="{'selected-option': typeOption == 3}"
+					(click)="selectOption(3)">Minhas Vagas
+				</li>
+			</ul>
+			<ul class="menu-login">
+				<li *ngIf="username == null" [routerLink]="['/']">
+					Login/Cadastro
+				</li>
+				<li *ngIf="username !== null" class="user-name">
+					<i class="fa fa-user"></i>
+					Olá, {{username}}
+					<span *ngIf="username" class="user-profile">
+						<p>Meu perfil</p>
+						<p (click)="logout()">Sair</p>
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div></div>
+	</article>
+</section>
+
+
+
+
+
+
+<!-- <section>
+	<article>
+		<div class="logo">
+			<a [routerLink]="['/home']">
+				<img src="assets/img/icon.svg" alt="">
+				VENTURA HR
+			</a>
+		</div>
+		<div class="search">
+			<input type="search" [(ngModel)]="searchName">
+			<button (click)="goToSearchEvent(searchName)">Buscar</button>
+		</div>
+	</article>
+	<article>
+		<div>
+			<ul>
+				<li class="movies">
+					Filmes
+					<ul class="movies-menu">
+						<li (click)="goToEvent('acao')">Ação</li>
+						<li>Aventura</li>
+						<li>Humor</li>
+						<li (click)="goToEvent('destaques')">Destaques</li>
+					</ul>
+				</li>
+				<li>Shows</li>
+				<li>Trailers</li>
+				<li>Cinemas</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li *ngIf="username === null" [routerLink]="['/']">
+					Login
+				 </li>
+				 <li *ngIf="username !== null" class="user-name">
+					<i class="fa fa-user"></i>
+					{{username}}
+					<p *ngIf="username" (click)="logout()" class="logout">
+						Sair
+					</p>
+				 </li>
+			</ul>
+		</div>
+	</article>
+</section> -->

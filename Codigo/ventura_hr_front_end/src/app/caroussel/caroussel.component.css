@@ -1,0 +1,119 @@
+/* Caroussel */
+
+.image-caroussel
+{
+    width: 100%;
+    height: 470px;
+    padding: 10px 0;
+    max-width: 980px;
+    overflow: hidden;
+    margin: 30px auto;
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.image-caroussel h2
+{
+	margin: 20px 10px;
+	width: fit-content;
+	border-bottom: 2px solid #b5121b;
+}
+
+.image-caroussel img
+{
+	width: 232px;
+    height: 350px;
+    margin: 0 6px;
+	border-radius: 10px;
+}
+
+.image-caroussel .inner
+{
+    left: 0px;
+    display: flex;
+    position: absolute;
+    transition: left .25s ease-out;
+}
+
+.prev:hover i,
+.next:hover i
+{
+    opacity: 1;
+}
+
+.most-search .prev i,
+.most-search .next i
+{
+    right: 0;
+    top: 40px;
+    width: 1.5em;
+    height: 1.5em;
+    opacity: 0.5;
+    color: gray;
+    cursor: pointer;
+    padding: 0 .2em;
+    font-size: 15px;
+    line-height: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid;
+    position: absolute;
+    box-sizing: border-box;
+    background-color: white;
+    transform: translateY(-50%);
+    transition: opacity 1s linear;
+    -webkit-transform: translateY(-50%);
+}
+
+.most-search .prev i
+{
+    right:  30px;
+}
+
+.most-search span
+{
+	cursor: pointer;
+}
+
+.most-search p
+{
+	margin: 0 20px;
+	padding: 5px 0;
+	font-weight: 500;
+	color: #b5121b;
+    border-bottom: 1px solid rgba(0,0,0,.3);
+}
+
+.most-search p:last-child
+{
+    color: gray;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.most-search p span
+{
+    float: right;
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    margin-top: -3px;
+}
+
+.most-search p span.freeClass
+{
+	background: green;
+}
+
+.most-search p span.adultClass
+{
+	background: red;
+}
+
+.most-search p span.mediumClass
+{
+	background: #edcb0c;
+}

@@ -1,0 +1,102 @@
+section.principal
+{
+    top: 15%;
+    width: 100%;
+    max-width: 980px;
+    text-align: center;
+    position: absolute;
+    left: calc(50% - 490px);
+}
+
+section.principal img
+{
+	width: 150px;
+	margin: 20px;
+	cursor: pointer;
+}
+
+section.principal label, 
+section.principal input
+{
+    display: block;
+    margin: 10px 0;
+	color: #2d2d2d;
+	font-size: .8rem;
+}
+
+section.principal div
+{
+    width: 250px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+section.principal input
+{
+    height: 30px;
+	width: 245px;
+	padding: 0 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+section.principal form
+{
+    width: 320px;
+    height: 250px;
+    margin: 10px auto;
+    text-align: left;
+    background: #fff;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+section.principal article
+{
+    width: 320px;
+    height: 60px;
+	display: flex;
+    margin: 10px auto;
+    text-align: center;
+    background: #fff;
+	align-items: center;   
+    border-radius: 7px;
+	border: 1px solid rgba(0,0,0,.2);
+}
+
+section.principal article p
+{
+	margin: 0 auto;
+	color: #2d2d2d;
+	font-size: .8rem;
+}
+
+section.principal article p a
+{
+	color: #3578dc;
+	font-weight: 500;
+    text-decoration: none;
+}
+
+.mat-flat-button:not([class*=mat-elevation-z]):hover, 
+.mat-stroked-button:not([class*=mat-elevation-z]):hover
+{
+	background: #1c56ac;
+}
+
+.mat-flat-button:not([class*=mat-elevation-z]), 
+.mat-stroked-button:not([class*=mat-elevation-z])
+{
+    width: 100%;
+    color: #fff;
+    margin-top: 10px;
+    background: #3578dc;
+}
+
+@media screen and (max-width: 600px) 
+{
+    section.principal
+    {
+        left: 0
+    }
+}

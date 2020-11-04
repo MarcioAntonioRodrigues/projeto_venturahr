@@ -1,0 +1,3 @@
+<app-header *ngIf="!currentRouteIsLogin()"></app-header>
+<router-outlet></router-outlet>
+<app-footer *ngIf="!currentRouteIsLogin()"></app-footer>

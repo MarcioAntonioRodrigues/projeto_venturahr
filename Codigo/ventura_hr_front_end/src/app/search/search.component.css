@@ -1,0 +1,253 @@
+/* GENERAL SETTINGS */
+p,
+li
+{
+	font-size: 0.8rem;
+}
+
+section.principal
+{
+	width: 100%;
+	margin-top: 60px;
+	text-align: center;
+	background: #ffffff;
+}
+
+main
+{
+	width: 100%;
+	display: flex;
+	margin: 0 auto;
+    max-width: 980px;
+}
+
+div.title
+{
+	margin: 10px 10px 20px;
+}
+
+div.title h1
+{
+	color: #767676;
+	font-size: 0.8rem;
+}
+
+article.jobs-list
+{
+	text-align: left;
+	min-width: 400px;
+	max-width: 400px;
+}
+
+p.titulo
+{
+	color: #2d2d2d;
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+p.descricao
+{
+	color: black;
+}
+
+p.remuneracao
+{
+	font-weight: bold;
+}
+
+p.data
+{
+	color: #767676;
+	font-size: 0.7rem;
+}
+
+.vaga-container
+{
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid rgba(0,0,0,.2);
+}
+
+.vaga-container:hover
+{
+	box-shadow: 0px 0px 2px 0px grey;
+}
+
+div.publicar-vaga
+{
+	width: 300px;
+	height: 200px;
+	margin-top: 45px;
+}
+
+div.receber-vaga
+{
+	width: 300px;
+	height: 280px;
+	margin: 45px 0;
+	text-align: left;
+}
+
+div.receber-vaga p,
+div.receber-vaga label,
+div.receber-vaga input
+{
+	padding: 10px;
+}
+
+div.receber-vaga input
+{
+	height: 30px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+div.receber-vaga button
+{
+	margin: 0 auto;
+	display: block;
+}
+
+div.publicar-vaga button
+{
+	margin-top: 20px;
+}
+
+div.publicar-vaga p:first-child,
+div.receber-vaga p:first-child
+{
+	padding: 10px;
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+div.list-of-jobs
+{
+	margin: 10px;
+	padding: 20px;
+	display: flex;
+    align-items: flex-end;
+	justify-content: space-between;
+}
+
+div.list-of-jobs button
+{
+	height: 40px;
+	width: 250px;
+}
+
+div.list-of-jobs article p
+{
+	margin: 5px;
+}
+
+div.list-of-jobs ul
+{
+	margin: 10px 20px;
+}
+
+div.list-of-jobs ul li
+{
+	color: #767675;
+	line-height: 20px;
+	list-style-type: circle;
+}
+
+article.search-job
+{
+	width: 100%;
+	text-align: left;
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+article.search-job div p
+{
+	margin: 15px 0;
+	font-size: 16px;
+	color: #2d2d2d;
+	text-align: center;
+}
+
+article.search-job div p span
+{
+	color: #2557a7;
+	font-weight: 500;
+}
+
+article.search-job div
+{
+	margin: 0px auto;
+    max-width: fit-content;
+}
+
+article.search-job input
+{
+	height: 13px;
+	width: 400px;
+    margin: 10px;
+	padding: 10px;
+	border-radius: .5rem;
+	border: 1px solid rgba(0,0,0,.4);
+}
+
+.btn-search
+{
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 0.875rem;
+	border-radius: .5rem;
+	background: #2557a7;
+}
+
+.btn-search:hover
+{
+	background: #164081;
+}
+
+div.divisor-line
+{
+	margin: 30px 0;
+	border: 1px solid #f6f6f6;
+}
+
+.loading
+{
+    top: 0;
+	width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: absolute;
+    background: rgba(0,0,0,.2);
+}
+
+.loading div
+{
+	width: 200px;
+    height: 200px;
+	position: absolute;
+    background: #fff;
+	border-radius: 3px;
+	top: calc(50% - 150px);
+	left: calc(50% - 150px);
+}
+
+.loading p
+{
+	font-weight: 500;
+    position: absolute;
+	top: calc(50% + 60px);
+    left: calc(50% - 75px);
+}
+
+mat-spinner
+{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: calc(50% - 60px);
+	left: calc(50% - 50px);
+}

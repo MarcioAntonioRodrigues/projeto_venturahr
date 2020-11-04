@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+		<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>VenturaHR</ion-title>
+		<!-- <img class="logo-ventura" src="../../assets/images/ventura-logotipo.svg" alt=""> -->
+	</ion-toolbar>
+</ion-header>
+	
+<ion-content [fullscreen]="true">
+	<!-- <ion-header collapse="condense">
+		<ion-toolbar>
+		<ion-title size="large">VenturaHR</ion-title>
+		</ion-toolbar>
+	</ion-header> -->
+	<div class="container">
+		<label for="buscarVagas">
+			O quê
+		</label>
+		<ion-searchbar showCancelButton="focus" 
+			placeholder="cargo, palavra-chave ou empresa" 
+			cancelButtonText="cancelar" [(ngModel)]="termoBusca">
+		</ion-searchbar>
+		<label for="onde">
+			Onde
+		</label>
+		<ion-searchbar showCancelButton="focus" 
+			placeholder="cidade, estado ou região" 
+			cancelButtonText="cancelar">
+		</ion-searchbar>
+		<ion-button expand="full" (click)="buscarVagas()">
+			Achar Vagas
+		</ion-button>
+	</div>
+	<ion-list>
+		<ion-item *ngFor="let option of optionsList"
+			(click)="selectOption(option.value)">
+			<ion-label>{{option.nome}}</ion-label>
+			<ion-radio slot="end"></ion-radio>
+			<ion-icon name="chevron-forward-outline"></ion-icon>
+		</ion-item>
+	</ion-list>
+</ion-content>

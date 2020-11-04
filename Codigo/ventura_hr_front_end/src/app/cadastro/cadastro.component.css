@@ -1,0 +1,69 @@
+.principal-container
+{
+	width: 100%;
+}
+
+.principal
+{
+	width: 100%;
+	margin: 90px auto 20px;
+	max-width: 980px;
+}
+
+.principal h1
+{
+	margin: 10px;
+}
+
+.principal input,
+.principal select
+{
+	width: 250px;
+	height: 30px;
+	width: 245px;
+	display: block;
+	padding: 0 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+.tipo-conta
+{
+	display: flex;
+}
+
+.tipo-conta div
+{
+	margin: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.tipo-conta div label
+{
+	margin-right: 10px;
+}
+
+.basic-margin
+{
+	margin: 10px;
+}
+
+.principal form,
+.principal form div
+{
+	display: inline-block;
+}
+
+.principal form div label
+{
+	margin-bottom: 5px;
+}
+
+.principal button
+{
+	display: block;
+}
+/* input:invalid {
+	border-color: red;
+  } */

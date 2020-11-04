@@ -1,0 +1,177 @@
+/* section */
+section.principal
+{
+	width: 100%;
+	margin-top: 60px;
+	text-align: center;
+	background: #ffffff;
+}
+
+section.buscas-populares
+{
+	width: 100%;
+	margin: 40px 0;
+}
+
+article.search-job
+{
+	width: 100%;
+	text-align: left;
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+article.search-job div p
+{
+	margin: 15px 0;
+	font-size: 16px;
+	color: #2d2d2d;
+	text-align: center;
+}
+
+article.search-job div p span
+{
+	color: #2557a7;
+	font-weight: 500;
+}
+
+article.search-job div
+{
+	margin: 0px auto;
+    max-width: fit-content;
+}
+
+article.search-job input
+{
+	height: 13px;
+	width: 400px;
+    margin: 10px;
+	padding: 10px;
+	border-radius: .5rem;
+	border: 1px solid rgba(0,0,0,.4);
+}
+
+main
+{
+	width: 100%;
+    margin: 0 auto;
+    max-width: 980px;
+}
+
+main div.sub-title
+{
+	width: 100%;
+	margin: 10px 0;
+	text-align: center;
+}
+
+main div.sub-title h2
+{
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+article.popular-list
+{
+	margin: 0 auto;
+	max-width: 700px;
+	text-align: center;
+}
+
+article.popular-list div
+{
+	margin: 5px;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+    align-items: center;
+    white-space: nowrap;
+	display: inline-flex;
+	background: #ececec;
+}
+
+article.popular-list div p
+{
+	margin-left: 5px;
+	font-size: .8rem;
+}
+
+article.popular-list div i
+{
+	font-size: .7rem;
+}
+
+
+article.jobs-list
+{
+	width: 100%;
+	text-align: left;
+}
+
+div.list-of-jobs
+{
+	margin: 10px;
+	padding: 20px;
+	display: flex;
+	border-radius: 5px;
+    align-items: flex-end;
+	justify-content: space-between;
+	border: 1px solid rgba(0,0,0,.4);
+}
+
+div.list-of-jobs button
+{
+	height: 40px;
+	width: 250px;
+}
+
+div.list-of-jobs article p
+{
+	margin: 5px;
+}
+
+div.publish-job
+{
+	margin: 10px;
+	padding: 20px;
+	border-radius: 5px;
+	border: 1px solid rgba(0,0,0,.4);
+}
+
+div.publish-job p,
+div.publish-job button
+{
+	margin: 10px;
+}
+
+p.titulo
+{
+	color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+p.descricao
+{
+	color: black;
+}
+
+.btn-search
+{
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 0.875rem;
+	border-radius: .5rem;
+	background: #2557a7;
+}
+
+.btn-search:hover
+{
+	background: #164081;
+}
+
+div.divisor-line
+{
+	margin: 30px 0;
+	border: 1px solid #f6f6f6;
+}

@@ -1,0 +1,180 @@
+.principal-container
+{
+	width: 100%;
+}
+
+.principal
+{
+	width: 100%;
+	margin: 90px auto 20px;
+	max-width: 980px;
+}
+
+.principal h1
+{
+	margin: 10px;
+}
+
+.principal input,
+.principal select
+{
+	width: 250px;
+	height: 30px;
+	width: 100%;
+	display: block;
+	padding: 0 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+.tipo-conta
+{
+	display: flex;
+}
+
+.tipo-conta div
+{
+	margin: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.tipo-conta div label
+{
+	margin-right: 10px;
+}
+
+.basic-margin
+{
+	margin: 10px;
+}
+
+.principal form
+{
+	width: 100%;
+}
+
+.principal form,
+.principal form div
+{
+	display: inline-block;
+}
+
+.principal form div label
+{
+	margin-bottom: 5px;
+}
+
+.principal form div.criterio-container
+{
+	width: 100%;
+	padding: 10px;
+}
+
+.principal form div.criterio-area
+{
+	display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+.principal form div.criterio-area span
+{
+    padding: 0;
+	width: 35px;
+    height: 35px;
+    font-size: 25px;
+}
+
+.principal form div.criterio-area article
+{
+	width: 100%;
+}
+
+div.criterio-input-area
+{
+	width: calc(80% - 20px);
+}
+
+div.criterio-select-area
+{
+	width: calc(20% - 20px);
+}
+
+.principal button
+{
+	display: block;
+}
+
+div.cargo-field,
+div.tipo-vaga-field
+{
+	width: calc(50% - 20px);
+}
+
+div.description-field
+{
+	width: calc(80% - 20px);
+}
+
+div.remuneracao-field
+{
+	width: calc(20% - 20px);
+}
+
+input.criterio-input
+{
+	width: 80%;
+}
+
+input.criterio-option
+{
+	width: 20%;
+}
+
+.principal form div.selected-criteria
+{
+	width: 100%;
+	padding: 10px;
+}
+
+.principal form div.selected-criteria article
+{
+	display: flex;
+	padding: 10px;
+	justify-content: space-between;
+}
+
+.principal form div.selected-criteria article.criteria-value p
+{
+	color: #000000;
+}
+
+.principal form div.selected-criteria article p.criterio-nome
+{
+	width: 30%;
+}
+
+.principal form div.selected-criteria article p.criterio-descricao
+{
+	width: 50%;
+}
+
+.principal form div.selected-criteria article p.criterio-pmd,
+.principal form div.selected-criteria article p.criterio-peso,
+.principal form div.selected-criteria article i
+{
+	width: 10%;
+}
+
+.principal form div.selected-criteria article i
+{
+	cursor: pointer;
+}
+
+.error-item
+{
+	color: red;
+}
