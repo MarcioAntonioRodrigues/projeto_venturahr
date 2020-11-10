@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ventura_hr.Repository.Context;
 
 namespace ventura_hr.Repository.Migrations
 {
     [DbContext(typeof(VenturaHRContext))]
-    partial class VenturaHRContextModelSnapshot : ModelSnapshot
+    [Migration("20201110191811_CreateRespostaVagaColumn")]
+    partial class CreateRespostaVagaColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

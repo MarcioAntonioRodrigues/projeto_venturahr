@@ -10,6 +10,8 @@ namespace ventura_hr.Repository.Context
 		public DbSet<Empresa> Empresas { get; set; }
 		public DbSet<Vaga> Vagas { get; set; }
 		public DbSet<Criterio> Criterio { get; set; }
+		public DbSet<RespostaVaga> RespostaVagas { get; set; }
+		public DbSet<RespostaCriterio> RespostaCriterios { get; set; }
 		public VenturaHRContext(DbContextOptions<VenturaHRContext> options) : base(options)
 		{
 
@@ -20,6 +22,7 @@ namespace ventura_hr.Repository.Context
 			modelBuilder.ApplyConfiguration(new CandidatoMap());
 			modelBuilder.ApplyConfiguration(new EmpresaMap());
 			modelBuilder.ApplyConfiguration(new VagaMap());
+			modelBuilder.ApplyConfiguration(new RespostaVagaMap());
 
 			base.OnModelCreating(modelBuilder);
 		}
