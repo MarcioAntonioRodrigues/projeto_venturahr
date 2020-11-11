@@ -8,7 +8,7 @@ namespace ventura_hr.Repository.Mapping
 	{
 		public void Configure(EntityTypeBuilder<RespostaVaga> builder)
 		{
-			builder.ToTable("RespostaVaga");
+			builder.ToTable("RespostaVagas");
 			builder.HasKey(x => x.Id);
 			builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
 			builder.Property(x => x.IdVaga).IsRequired().HasMaxLength(250);

@@ -26,6 +26,7 @@ namespace ventura_hr
 			services.AddTransient<ICandidatoRepository, CandidatoRepository>();
 			services.AddTransient<IEmpresaRepository, EmpresaRepository>();
 			services.AddTransient<IVagaRepository, VagaRepository>();
+			services.AddTransient<IRespostaVagaRepository, RespostaVagaRepository>();
 
 			services.AddDbContext<VenturaHRContext>(opt =>
 			{
