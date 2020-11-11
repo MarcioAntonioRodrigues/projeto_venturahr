@@ -18,6 +18,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { VagaComponent } from './vaga/vaga.component';
+import { RespostaVagaComponent } from './resposta-vaga/resposta-vaga.component';
+import { SessionService } from './services/session.service';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { VagaComponent } from './vaga/vaga.component';
 	  AppComponent,
 	  HomeComponent,
 	  SearchComponent,
-	  VagaComponent
+	  VagaComponent,
+	  RespostaVagaComponent
 	],
   entryComponents: [],
   imports: [
@@ -40,6 +43,7 @@ import { VagaComponent } from './vaga/vaga.component';
     StatusBar,
 	SplashScreen,
 	VagasService,
+	SessionService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

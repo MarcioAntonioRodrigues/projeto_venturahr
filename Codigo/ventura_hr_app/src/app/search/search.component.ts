@@ -128,7 +128,8 @@ export class SearchComponent implements OnInit
 			'data': item.vaga.dataCriacao,
 			'nomeEmpresa': item.empresa.nome,
 			'local': item.empresa.endereco.cidade,
-			'criterios': item.criterios
+			'criterios': item.criterios,
+			'idVaga': item.vaga.id
 		  }
 		});
 		return await modal.present();

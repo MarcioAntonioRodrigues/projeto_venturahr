@@ -4,6 +4,7 @@ import { AuthService } from '../services/auth.service';
 import { Usuario } from '../models/Usuario';
 import { NavController } from '@ionic/angular';
 import { HomeComponent } from '../home/home.component'
+import { SessionService } from '../services/session.service';
 
 @Component({
 	selector: 'app-folder',
@@ -20,7 +21,8 @@ export class FolderPage implements OnInit {
 	constructor(private activatedRoute: ActivatedRoute,
 				private authService: AuthService,
 				private router: Router,
-				public navCtrl: NavController) { }
+				public navCtrl: NavController,
+				private sessionService: SessionService) { }
 
 	ngOnInit()
 	{
@@ -33,7 +35,7 @@ export class FolderPage implements OnInit {
 			(res: any) =>
 			{
 				let userResponse = JSON.parse(res._body)[0]
-				// this.sessionService.setUser(userResponse);
+				this.sessionService.setUser(userResponse);
 				this.router.navigateByUrl('/home');
 			},
 			error =>

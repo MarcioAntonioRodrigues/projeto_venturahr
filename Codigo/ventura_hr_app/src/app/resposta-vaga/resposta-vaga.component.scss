@@ -1,0 +1,53 @@
+p
+{
+	margin: 10px 0 0;
+}
+
+h2
+{
+	margin-bottom: 20px;
+}
+
+div.main
+{
+	margin: 20px;
+}
+
+ion-icon
+{
+	top: 1rem;
+    right: 1rem;
+	font-size: 30px;
+    position: absolute;
+}
+
+ion-button
+{
+	margin: 10px;
+}
+
+ion-select
+{
+	width: 100%;
+}
+
+.strong
+{
+	font-weight: bold;
+}
+
+div.nivel-conhecimento
+{
+	display: flex;
+	align-items: center;
+}
+
+div.item-criterio
+{
+	border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+div.item-criterio:last-of-type
+{
+	border-bottom: none;
+}

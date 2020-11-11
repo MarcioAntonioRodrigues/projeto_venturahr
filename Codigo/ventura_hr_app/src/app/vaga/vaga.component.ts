@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { RespostaVagaComponent } from '../resposta-vaga/resposta-vaga.component';
 
 @Component({
   selector: 'app-vaga',
@@ -16,8 +17,9 @@ export class VagaComponent implements OnInit
 	@Input() nomeEmpresa: string;
 	@Input() local: string;
 	@Input() criterios: Array<any> = new Array<any>();
+	@Input() idVaga: number;
 
-  constructor(public modalCtrl: ModalController) { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
 	  console.log("criterios:", this.criterios)
@@ -25,9 +27,22 @@ export class VagaComponent implements OnInit
 
   dismiss() 
   {
-    this.modalCtrl.dismiss({
+    this.modalController.dismiss({
       'dismissed': true
     });
   }
+
+  async presentModal() 
+	{
+		const modal = await this.modalController.create({
+		  component: RespostaVagaComponent,
+		  cssClass: 'my-custom-class',
+		  componentProps: {
+			'criterios': this.criterios,
+			'idVaga': this.idVaga 
+		  }
+		});
+		return await modal.present();
+	  }
 
 }
