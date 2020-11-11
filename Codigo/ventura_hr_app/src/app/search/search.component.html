@@ -19,18 +19,16 @@
 	<ion-list>
 		<ion-item class="list-of-jobs vaga-container" *ngFor="let item of vagas"
 		(click)="presentModal(item)">
-			<article>
+			<article class="vaga">
 				<p class="titulo">
 					{{item.vaga?.cargo}}
 				</p>
-				<p>{{item.vaga?.tipoVaga == 1 ? 'Estágio' : 'CLT'}}</p>
-				<!-- <p>
+				<p>
 					{{item.empresa?.nome}}
-				</p> -->
-				<!-- <p>
-					{{item.empresa?.endereco.cidade + ', ' + 
-					item.empresa?.endereco.logradouro}}
-				</p> -->
+				</p>
+				<p>{{item.empresa?.endereco.cidade}}, {{item.empresa?.endereco.estado}} - 
+					{{item.vaga?.tipoVaga == 1 ? 'Estágio' : 'CLT'}}
+				</p>
 				<p class="remuneracao">
 					R$ {{item.vaga?.remuneracao}} por mês
 				</p>
@@ -43,7 +41,7 @@
 					</li>
 				</ul> -->
 				<p class="data">
-					Criada em: {{item.vaga?.dataCriacao | date:'medium'}}
+					{{item.vaga?.dataCriacao | date}}
 				</p>
 			</article>
 		</ion-item>	

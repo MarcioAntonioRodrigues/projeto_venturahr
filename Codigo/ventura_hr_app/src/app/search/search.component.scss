@@ -1,3 +1,12 @@
+p
+{
+	margin: 10px;
+}
+
+article.vaga
+{
+	margin: 10px 0;
+}
 
 ion-input
 {
@@ -32,4 +41,19 @@ div.search-area
 {
 	font-weight: bold;
 	margin: 20px 0 10px;
+}
+
+p.titulo
+{
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+p.remuneracao
+{
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 3px;
+	width: fit-content;
+	background: rgba(0,0,0,.1);
 }

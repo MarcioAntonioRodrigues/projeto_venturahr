@@ -1,22 +1,6 @@
 <ion-content>
 	<div class="main">
-		<h2>Selecione o nivel de conhecimento dos critérios</h2>
-		<!-- <ion-list>
-			<ion-item *ngFor="let criterio of criterios">
-				<p class="strong">{{criterio.nome}}</p>
-				<p>{{criterio.descricao}}</p>
-				<div class="nivel-conhecimento">
-					<ion-label class="strong">Conhecimento</ion-label>
-					<ion-select placeholder="Selecione o nível" [(ngModel)]="criterio.pmd">
-						<ion-select-option value="1">Nenhum</ion-select-option>
-						<ion-select-option value="2">Pouco</ion-select-option>
-						<ion-select-option value="3">Médio</ion-select-option>
-						<ion-select-option value="4">Bom</ion-select-option>
-						<ion-select-option value="5">Avançado</ion-select-option>
-					</ion-select>
-				</div>
-			</ion-item>
-		</ion-list> -->
+		<h2>Selecione o nível de conhecimento dos critérios</h2>
 		<div class="item-criterio" *ngFor="let criterio of criterios">
 			<p class="strong">{{criterio.nome}}</p>
 			<p>{{criterio.descricao}}</p>
@@ -31,7 +15,6 @@
 				</ion-select>
 			</div>
 		</div>
-		<!-- <ion-icon name="close-circle-outline" (click)="dismiss()"></ion-icon> -->
 		<ion-button expand="full" (click)="enviarCandidatura()">Enviar candidatura</ion-button>
 		<ion-button expand="full" color="medium" (click)="dismiss()">Cancelar</ion-button>
 	</div>

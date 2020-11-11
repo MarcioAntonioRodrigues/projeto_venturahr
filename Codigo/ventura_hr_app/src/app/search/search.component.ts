@@ -4,11 +4,16 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController, NavController, ModalController } from '@ionic/angular';
 import { VagasService } from '../services/vagas.service';
 import { VagaComponent } from '../vaga/vaga.component';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+registerLocaleData(ptBr)
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
+  providers: [ {provide: LOCALE_ID, useValue: 'pt'}]
 })
 export class SearchComponent implements OnInit 
 {
