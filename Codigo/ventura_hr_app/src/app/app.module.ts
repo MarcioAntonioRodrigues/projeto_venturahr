@@ -16,16 +16,20 @@ import { VagasService } from './services/vagas.service'
 
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { VagaComponent } from './vaga/vaga.component';
 
 
 @NgModule({
   declarations: [
 	  AppComponent,
 	  HomeComponent,
-	  SearchComponent
+	  SearchComponent,
+	  VagaComponent
 	],
   entryComponents: [],
   imports: [
+	CommonModule,
 	BrowserModule,
 	FormsModule,
 	HttpModule,

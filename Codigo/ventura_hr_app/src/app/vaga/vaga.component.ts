@@ -11,10 +11,17 @@ export class VagaComponent implements OnInit
 	@Input() cargo: string;
 	@Input() tipoVaga: string;
 	@Input() remuneracao: string;
+	@Input() descricao: string;
+	@Input() data: string;
+	@Input() nomeEmpresa: string;
+	@Input() local: string;
+	@Input() criterios: Array<any> = new Array<any>();
 
   constructor(public modalCtrl: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+	  console.log("criterios:", this.criterios)
+  }
 
   dismiss() 
   {

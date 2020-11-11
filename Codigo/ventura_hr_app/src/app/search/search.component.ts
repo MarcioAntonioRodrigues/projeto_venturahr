@@ -116,13 +116,19 @@ export class SearchComponent implements OnInit
 
 	async presentModal(item: any) 
 	{
+		console.log("Vaga:", item)
 		const modal = await this.modalController.create({
 		  component: VagaComponent,
 		  cssClass: 'my-custom-class',
 		  componentProps: {
 			'cargo': item.vaga.cargo,
 			'tipoVaga': item.vaga.tipoVaga,
-			'remuneracao': item.vaga.remuneracao
+			'remuneracao': item.vaga.remuneracao,
+			'descricao': item.vaga.descricao,
+			'data': item.vaga.dataCriacao,
+			'nomeEmpresa': item.empresa.nome,
+			'local': item.empresa.endereco.cidade,
+			'criterios': item.criterios
 		  }
 		});
 		return await modal.present();

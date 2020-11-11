@@ -1,12 +1,40 @@
-<p>
-  {{cargo}}
-</p>
-<p>
-  {{tipoVaga == 1 ? 'Estagio' : 'CLT'}}
-</p>
-<p>
-  {{'R$ ' + remuneracao}}
-</p>
-<ion-button (click)="dismiss()">
-	Fechar
-</ion-button>
+<ion-content>
+	<div class="main">
+		<h1>
+		  {{cargo}}
+		</h1>
+		<p>
+			{{local}} - {{tipoVaga == 1 ? 'Estagio' : 'CLT'}}
+		</p>
+		<h2>Dados da Vaga</h2>
+		<p class="subtitle">Salário</p>
+		<p>
+		  {{'R$ ' + remuneracao}}
+		</p>
+		<p class="subtitle">Tipo da vaga</p>
+		<p>
+			{{tipoVaga == 1 ? 'Estagio' : 'CLT'}}
+		</p>
+		<p class="subtitle">Criada em</p>
+		<p>
+			{{data}}
+		</p>
+		<p class="subtitle">Empresa</p>
+		<p>
+			{{nomeEmpresa}}
+		</p>
+		<h2>Descrição completa da vaga</h2>
+		<p>
+			{{descricao}}
+		</p>
+		<div *ngFor="let criterio of criterios">
+			<!-- <p>{{criterio.nome}}</p> -->
+			<p>{{criterio.descricao}}</p>
+			<!-- <p>{{criterio.peso}}</p>
+			<p>{{criterio.pmd}}</p> -->
+		</div>
+		<ion-icon name="close-circle-outline" (click)="dismiss()"></ion-icon>
+		<ion-button expand="full" type="submit">Candidatar-se a vaga</ion-button>
+	</div>
+
+</ion-content>
