@@ -1,5 +1,4 @@
 import { Injectable} from '@angular/core';
-import { Usuario } from '../models/Usuario';
 
 @Injectable()
 export class SessionService 

@@ -20,6 +20,7 @@ import { CommonModule } from '@angular/common';
 import { VagaComponent } from './vaga/vaga.component';
 import { RespostaVagaComponent } from './resposta-vaga/resposta-vaga.component';
 import { SessionService } from './services/session.service';
+import { RespostaVagaService } from './services/respostaVaga.service';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { SessionService } from './services/session.service';
 	SplashScreen,
 	VagasService,
 	SessionService,
+	RespostaVagaService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

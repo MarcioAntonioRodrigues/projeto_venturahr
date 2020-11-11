@@ -19,30 +19,28 @@ export class VagaComponent implements OnInit
 	@Input() criterios: Array<any> = new Array<any>();
 	@Input() idVaga: number;
 
-  constructor(public modalController: ModalController) { }
+  	constructor(public modalController: ModalController) { }
 
-  ngOnInit() {
-	  console.log("criterios:", this.criterios)
-  }
+	ngOnInit() {}
 
-  dismiss() 
-  {
-    this.modalController.dismiss({
-      'dismissed': true
-    });
-  }
+	dismiss() 
+	{
+		this.modalController.dismiss({
+		'dismissed': true
+		});
+	}	
 
-  async presentModal() 
+	async presentModal() 
 	{
 		const modal = await this.modalController.create({
-		  component: RespostaVagaComponent,
-		  cssClass: 'my-custom-class',
-		  componentProps: {
+		component: RespostaVagaComponent,
+		cssClass: 'my-custom-class',
+		componentProps: {
 			'criterios': this.criterios,
 			'idVaga': this.idVaga 
-		  }
+		}
 		});
 		return await modal.present();
-	  }
+	}
 
 }

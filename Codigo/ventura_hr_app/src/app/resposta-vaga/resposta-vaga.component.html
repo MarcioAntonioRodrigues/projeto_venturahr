@@ -15,7 +15,10 @@
 				</ion-select>
 			</div>
 		</div>
-		<ion-button expand="full" (click)="enviarCandidatura()">Enviar candidatura</ion-button>
+		<ion-button expand="full" (click)="saveCandidatura()">Enviar candidatura</ion-button>
 		<ion-button expand="full" color="medium" (click)="dismiss()">Cancelar</ion-button>
+		<p class="errorMessage" *ngIf="showMessageNullablePMD">
+			Selecione todos os critérios antes de enviar a candidatura
+		</p>
 	</div>
 </ion-content>
