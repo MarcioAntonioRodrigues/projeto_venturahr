@@ -1,5 +1,5 @@
 import { Empresa } from '../models/Empresa';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController, NavController, ModalController } from '@ionic/angular';
 import { VagasService } from '../services/vagas.service';
@@ -29,7 +29,8 @@ export class SearchComponent implements OnInit
 				private vagasService: VagasService,
 				public loadingController: LoadingController,
 				public navCtrl: NavController,
-				public modalController: ModalController) 
+				public modalController: ModalController,
+				private router: Router) 
 	{
 		const vagasEncontradas =  JSON.parse(this.route._futureSnapshot.queryParams._body);
 		this.setVagasToList(vagasEncontradas);
@@ -138,5 +139,10 @@ export class SearchComponent implements OnInit
 		  }
 		});
 		return await modal.present();
-	  }
+	}
+
+	public openProfilePage()
+	{
+		this.router.navigateByUrl('/perfil');
+	}
 }
