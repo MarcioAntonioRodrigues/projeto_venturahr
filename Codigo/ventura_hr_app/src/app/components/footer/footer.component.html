@@ -1,0 +1,21 @@
+<ion-toolbar>
+	<ion-tabs>
+		<ion-tab-bar slot="bottom">
+			<ion-tab-button routerlink="[]">
+				<ion-icon name="home-outline"></ion-icon>
+				<ion-label>Página inicial</ion-label>
+				<!-- <ion-badge>6</ion-badge> -->
+			</ion-tab-button>
+		
+			<ion-tab-button (click)="openProfilePage()">
+				<ion-icon name="person-outline"></ion-icon>
+				<ion-label>Perfil</ion-label>
+			</ion-tab-button>
+
+			<ion-tab-button (click)="openMinhasVagasPage()">
+				<ion-icon name="briefcase-outline"></ion-icon>
+				<ion-label>Minhas vagas</ion-label>
+			</ion-tab-button>
+		</ion-tab-bar>
+	</ion-tabs>
+</ion-toolbar>

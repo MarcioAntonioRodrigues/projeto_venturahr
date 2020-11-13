@@ -1,0 +1,31 @@
+<ion-content>
+	<h1 class="minhas-vagas-title">Minhas Vagas Respondidas</h1>
+	<div class="search-area">
+		<div class="container">
+			<p>{{minhasVagasList.length}} vagas encontradas</p>
+		</div>
+	</div>
+	<ion-list>
+		<ion-item class="list-of-jobs vaga-container" *ngFor="let item of minhasVagasList"
+		(click)="presentModal(item)">
+			<article class="vaga">
+				<p class="titulo">
+					{{item.vaga?.cargo}}
+				</p>
+				<p>
+					{{item.empresa?.nome}}
+				</p>
+				<p>{{item.empresa?.endereco.cidade}}, {{item.empresa?.endereco.estado}} - 
+					{{item.vaga?.tipoVaga == 1 ? 'Estágio' : 'CLT'}}
+				</p>
+				<p class="remuneracao">
+					R$ {{item.vaga?.remuneracao}} por mês
+				</p>
+				<p class="data">
+					{{item.vaga?.dataCriacao | date}}
+				</p>
+			</article>
+		</ion-item>	
+		<ion-button expand="full" (click)="closePage()" class="minhas-vagas">Voltar</ion-button>
+	</ion-list>
+</ion-content>

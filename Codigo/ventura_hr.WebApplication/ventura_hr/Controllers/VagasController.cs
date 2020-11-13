@@ -29,6 +29,13 @@ namespace ventura_hr.WebApplication.Controllers
 		}
 
 		[HttpGet]
+		[Route("GetByIdVaga/{idVaga}")]
+		public ActionResult BuscarVagaByIdVaga(int idVaga)
+		{
+			return Ok(this.Context.Vagas.Where(v => v.Id.Equals(idVaga)));
+		}
+
+		[HttpGet]
 		[Route("GetByIdEmpresa/{idEmpresa}")]
 		public ActionResult BuscarVagasByIdEmpresa(Guid idEmpresa)
 		{

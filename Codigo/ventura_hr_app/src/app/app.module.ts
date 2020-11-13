@@ -19,8 +19,11 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { VagaComponent } from './vaga/vaga.component';
 import { RespostaVagaComponent } from './resposta-vaga/resposta-vaga.component';
+import { MinhasVagasComponent } from './minhas-vagas/minhas-vagas.component';
 import { SessionService } from './services/session.service';
 import { RespostaVagaService } from './services/respostaVaga.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { MinhasVagasService } from './services/minhasVagas.service';
 
 
 @NgModule({
@@ -29,7 +32,9 @@ import { RespostaVagaService } from './services/respostaVaga.service';
 	  HomeComponent,
 	  SearchComponent,
 	  VagaComponent,
-	  RespostaVagaComponent
+	  RespostaVagaComponent,
+	  FooterComponent,
+	  MinhasVagasComponent
 	],
   entryComponents: [],
   imports: [
@@ -46,6 +51,7 @@ import { RespostaVagaService } from './services/respostaVaga.service';
 	VagasService,
 	SessionService,
 	RespostaVagaService,
+	MinhasVagasService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

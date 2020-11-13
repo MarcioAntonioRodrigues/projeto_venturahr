@@ -1,3 +1,10 @@
+h1.minhas-vagas-title
+{
+	font-size: 23px;
+	font-weight: bold;
+	text-align: center;
+}
+
 p
 {
 	margin: 10px;
@@ -56,4 +63,9 @@ p.remuneracao
     border-radius: 3px;
 	width: fit-content;
 	background: rgba(0,0,0,.1);
+}
+
+ion-button.minhas-vagas
+{
+	margin: 20px;
 }

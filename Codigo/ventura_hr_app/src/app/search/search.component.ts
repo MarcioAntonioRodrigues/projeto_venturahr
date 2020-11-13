@@ -140,9 +140,4 @@ export class SearchComponent implements OnInit
 		});
 		return await modal.present();
 	}
-
-	public openProfilePage()
-	{
-		this.router.navigateByUrl('/perfil');
-	}
 }

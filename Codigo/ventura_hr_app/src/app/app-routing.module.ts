@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { SearchComponent } from './search/search.component';
+import { MinhasVagasComponent } from './minhas-vagas/minhas-vagas.component';
 
 const routes: Routes = [
   {
@@ -16,9 +17,8 @@ const routes: Routes = [
   },
   { path: 'home', component: HomeComponent },
   { path: 'busca', component: SearchComponent },
-  { path: 'busca/backPage', component: HomeComponent },
   { path: 'perfil', component: PerfilComponent },
-  { path: 'perfil/backPage', component: HomeComponent },
+  { path: 'minhasVagas', component: MinhasVagasComponent },
 ];
 
 @NgModule({

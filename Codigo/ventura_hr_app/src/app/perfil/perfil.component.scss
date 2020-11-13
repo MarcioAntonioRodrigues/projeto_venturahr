@@ -1,0 +1,41 @@
+div.main
+{
+	margin: 6rem 2rem;
+	text-align: center;
+}
+
+ion-icon
+{
+	font-size: 90px;
+}
+
+p
+{
+	font-weight: bold;
+}
+
+p span
+{
+	font-weight: normal;
+}
+
+p.userName
+{
+	font-size: 1.3rem;
+}
+
+ion-button
+{
+	margin-top: 3rem;
+}
+
+div.btn-close
+{
+	ion-icon
+	{
+		top: 1rem;
+		right: 1rem;
+		font-size: 30px;
+		position: absolute;
+	}
+}
