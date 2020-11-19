@@ -32,9 +32,33 @@ namespace ventura_hr.WebApplication.Controllers
 
 		[HttpGet]
 		[Route("GetAllByIdCandidato/{idCandidato}")]
-		public ActionResult BuscarRespostasByIdUsuario(Guid idCandidato)
+		public ActionResult GetAllByIdCandidato(Guid idCandidato)
 		{
-			return Ok(this.Context.RespostaVagas.Where(r => r.IdCandidato.Equals(idCandidato)).ToList());
+			return Ok(this.Context.RespostaVagas
+				.Where(r => r.IdCandidato.Equals(idCandidato)).ToList());
+		}
+
+		[HttpGet]
+		[Route("GetVagasRespondidasByIdCandidato/{idCandidato}")]
+		public List<RespostaVagaCandidatoDto> GetVagasRespondidasByIdCandidato(Guid idCandidato)
+		{
+			List<RespostaVagaCandidatoDto> respostasVagaCandidato = new List<RespostaVagaCandidatoDto>();
+			List<Vaga> vagasList = new List<Vaga>();
+			List<RespostaVaga> respostasVagaList = this.Context.RespostaVagas
+				.Where(r => r.IdCandidato.Equals(idCandidato)).ToList();
+			respostasVagaList.ForEach(r =>
+			{
+				RespostaVagaCandidatoDto resposta = new RespostaVagaCandidatoDto();
+				Vaga vaga = this.Context.Vagas
+				.Where(v => v.Id.Equals(r.IdVaga)).FirstOrDefault();
+				Empresa empresa = Context.Empresas
+				.Where(e => e.Id.Equals(vaga.IdEmpresa)).FirstOrDefault();
+				resposta.Vaga = vaga;
+				resposta.Empresa = empresa;
+				respostasVagaCandidato.Add(resposta);
+				//vagasList.Add(vaga);
+			});
+			return respostasVagaCandidato;
 		}
 
 		[HttpGet]
@@ -62,23 +86,15 @@ namespace ventura_hr.WebApplication.Controllers
 		[Route("GetRankingByRespostaVagaId/{vagaId}")]
 		public List<RankingDto> GetRankingByRespostaVagaId(int vagaId)
 		{
-			//Criar uma lista de rankingDto
 			List<RankingDto> rankingList = new List<RankingDto>();
-
-			//pegar lista de respostas de uma vaga pelo id da mesma
 			List<RespostaVaga> respostasList = this.Context.RespostaVagas
 				.Where(r => r.IdVaga.Equals(vagaId)).ToList();
 
-
-
-			//montar a lista do ranking varrendo a lista de respostas
 			respostasList.ForEach(r =>
 			{
 				RankingDto item = new RankingDto();
-
 				List<RespostaCriterio> respCriterio = Context.RespostaCriterios
 				.Where(res => res.RespostaVagaId == r.Id).ToList();
-
 				Candidato c = Context.Candidatos
 				.Where(c => c.Id.Equals(r.IdCandidato)).FirstOrDefault();
 
@@ -91,6 +107,7 @@ namespace ventura_hr.WebApplication.Controllers
 			return rankingList;
 		}
 
+		[Route("CalcularMedia/{respostaCriterio}")]
 		public float CalcularMedia(List<RespostaCriterio> respostaCriterio)
 		{
 			float multiplicacao = 0;

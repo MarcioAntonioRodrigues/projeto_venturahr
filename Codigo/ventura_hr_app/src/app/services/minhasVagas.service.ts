@@ -12,7 +12,7 @@ export class MinhasVagasService
 	{
 		console.log("id candidato", idCandidato)
 
-		let url = this.baseUrl + "respostasvagas/GetAllByIdCandidato/" + idCandidato;
+		let url = this.baseUrl + "respostasvagas/GetVagasRespondidasByIdCandidato/" + idCandidato;
 
 		return this.http.get(url);
 	}

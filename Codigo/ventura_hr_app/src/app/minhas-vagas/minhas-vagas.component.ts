@@ -14,9 +14,6 @@ export class MinhasVagasComponent implements OnInit
 {
 	private usuario: any;
 	private IdCandidato: any;
-	private idsVagasList: any = [];
-	private empresasList: any = [];
-	private minhasVagasListResponse: any = [];
 	private minhasVagasList: any = [];
 
 	constructor(private minhasVagasService: MinhasVagasService,
@@ -27,10 +24,12 @@ export class MinhasVagasComponent implements OnInit
 	{
 		this.usuario = JSON.parse(this.sessionService.getUser());
 		this.IdCandidato = this.usuario.id;
-		this.setMinhasVagasList();
+		this.getRespostasVagaByIdCandidato();
 	}
 
-	private async setMinhasVagasList() 
+	ngOnInit() {}
+	  
+	public async getRespostasVagaByIdCandidato()
 	{
 		const loading = await this.loadingController.create({
 			cssClass: 'my-custom-class',
@@ -39,78 +38,17 @@ export class MinhasVagasComponent implements OnInit
 		});
 		await loading.present();
 
-		this.getRespostasVagaByIdCandidato();
-		setTimeout(() => {
-			this.getMinhasVagas();
-		}, 500);
-
-		setTimeout(() => {
-			this.getEmpresasList();
-		}, 1000);
-
-		setTimeout(() => {
-			loading.onDidDismiss();
-			this.setEmpresasToVagas();
-		}, 1500);
-	}
-
-	ngOnInit() {}
-	  
-	public getRespostasVagaByIdCandidato()
-	{
 		this.minhasVagasService.getRespostasVagaByIdCandidato(this.IdCandidato).subscribe(
 			(res: any)=>
 			{
-				let response = JSON.parse(res._body);
-				response.forEach((vaga: any) => {
-					this.idsVagasList.push(vaga.idVaga)
-				});
+				loading.onDidDismiss();
+				this.minhasVagasList = JSON.parse(res._body);
+				console.log("vagas respondidas:", JSON.parse(res._body))
 			}
 		);
 	}
 
-	public getMinhasVagas()
-	{
-		this.idsVagasList.forEach((id: number) => {
-			this.minhasVagasService.getVagaByIdVaga(id).subscribe(
-				(res: any)=>
-				{
-					let vaga = JSON.parse(res._body);
-					this.minhasVagasListResponse.push(vaga);
-					console.log("vagas minhas: ", this.minhasVagasListResponse);
-				}
-			);
-		});
-	}
-
-	public getEmpresasList()
-	{
-		this.minhasVagasListResponse.forEach((vaga: any) => {
-			console.log("vaga.idEmpresa:", vaga[0].idEmpresa)
-			this.vagasService.getEmpresaById(vaga[0].idEmpresa).subscribe(
-				(res: any)=>
-				{
-					let empresa = JSON.parse(res._body);
-					this.empresasList.push(empresa);
-					console.log("empresasList: ", this.empresasList);
-				}
-			);
-		});
-	}
-
-	public setEmpresasToVagas()
-	{
-		for (let index = 0; index < this.minhasVagasListResponse.length; index++) {
-			let minhaVaga = {
-				vaga: this.minhasVagasListResponse[index][0],
-				empresa: this.empresasList[index]
-			}
-			this.minhasVagasList.push(minhaVaga);
-		}
-		console.log("Minhas vagas completas:", this.minhasVagasList)
-	}
-
-	closePage()
+	public closePage()
 	{
 		this.router.navigateByUrl('/home');
 	}
