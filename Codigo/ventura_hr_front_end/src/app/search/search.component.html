@@ -50,6 +50,11 @@
 					<p class="data">
 						Criada em: {{item.vaga?.dataCriacao | date:'medium'}}
 					</p>
+					<div class="btn-ranking" *ngIf="tipoUsuario == 2">
+						<button class="btn btn-search" mat-button (click)="openDialog(item.vaga)">
+							Ver ranking
+						</button>
+					</div>
 				</article>
 			</div>
 		</article>

@@ -394,3 +394,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 {
 	stroke: #2557a7;
 }
+
+section.ranking-list .mat-pseudo-checkbox
+{
+	display: none !important;
+}
+
+.mat-list-base .mat-list-item.mat-list-item-with-avatar .mat-list-item-content-reverse .mat-list-text, 
+.mat-list-base .mat-list-item.mat-list-option .mat-list-item-content-reverse .mat-list-text, 
+.mat-list-base .mat-list-option.mat-list-item-with-avatar .mat-list-item-content-reverse .mat-list-text, 
+.mat-list-base .mat-list-option.mat-list-option .mat-list-item-content-reverse .mat-list-text
+{
+	padding: 0 !important;
+}

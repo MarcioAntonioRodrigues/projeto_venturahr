@@ -3,11 +3,16 @@ import { ActivatedRoute } from '@angular/router';
 import { VagasService } from '../services/vagas.service';
 import { Empresa } from '../Models/Empresa';
 import { SessionService } from '../services/session.service';
+import {MatDialog, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import { DetalheVagaDialogComponent } from '../components/detalhe-vaga-dialog/detalhe-vaga-dialog.component';
 
 @Component({
 	selector: 'app-search',
 	templateUrl: './search.component.html',
-	styleUrls: ['./search.component.css']
+	styleUrls: ['./search.component.css'],
+	providers:[
+		{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+	]
 })
 
 export class SearchComponent
@@ -23,7 +28,8 @@ export class SearchComponent
 
 	constructor(private route: ActivatedRoute,  
 				private sessionService: SessionService, 
-				private vagasService: VagasService)
+				private vagasService: VagasService,
+				private dialog: MatDialog)
 	{
 		this.usuario = JSON.parse(this.sessionService.getUser());
 		if(this.usuario != null)
@@ -104,5 +110,14 @@ export class SearchComponent
 			this.searchLoading = false;
 			this.attrEmpresaToVaga();
 		}, 2000);
+	}
+
+	public openDialog() 
+	{
+		const dialogRef = this.dialog.open(DetalheVagaDialogComponent);
+	
+		dialogRef.afterClosed().subscribe(result => {
+		  console.log(`Dialog result: ${result}`);
+		});
 	}
 }

@@ -1,0 +1,38 @@
+<section class="ranking-list">
+	<div class="title">
+		<h2>
+		  Ranking de candidatos
+		</h2>
+	</div>
+	<div class="table-title">
+		<p>Colocação</p>
+		<p>Candidato</p>
+		<p>Pontuação</p>
+	</div>
+	<mat-selection-list #position [multiple]="false">
+		<mat-list-option *ngFor="let position of rankingList; let i = index"[value]="position">
+			<div class="table-title" (click)="selectCandidato(position.candidato)">
+				<p>
+					{{i + 1}}
+				</p>
+				<p>
+					{{position.candidato.nome}}
+				</p>
+				<p>
+					{{position.media}}
+				</p>
+			</div>
+		</mat-list-option>
+	</mat-selection-list>
+	<div class="dados-candidato">
+		<h3 class="title">
+			Dados do candidato
+		</h3>
+		<p><span>Nome</span>{{candidatoSelecionado.nome}}</p>
+		<p><span>Telefone</span>{{candidatoSelecionado.telefone}}</p>
+		<p><span>CPF</span>{{candidatoSelecionado.cpf}}</p>
+		<p><span>Sexo</span>{{candidatoSelecionado.sexo}}</p>
+		<p><span>E-mail</span>{{candidatoSelecionado.email}}</p>
+		<p><span>Cidade</span>{{candidatoSelecionado.endereco.cidade}}</p>
+	</div>
+</section>

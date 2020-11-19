@@ -133,12 +133,6 @@ div.list-of-jobs
 	justify-content: space-between;
 }
 
-div.list-of-jobs button
-{
-	height: 40px;
-	width: 250px;
-}
-
 div.list-of-jobs article p
 {
 	margin: 5px;
@@ -250,4 +244,11 @@ mat-spinner
 	position: absolute;
 	top: calc(50% - 60px);
 	left: calc(50% - 50px);
+}
+
+div.btn-ranking
+{
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
 }

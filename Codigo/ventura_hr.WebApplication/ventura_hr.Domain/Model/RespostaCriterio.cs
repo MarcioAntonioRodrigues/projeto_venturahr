@@ -6,5 +6,6 @@
 		public int IdCriterio { get; set; }
 		public int PMD { get; set; }
 		public int Peso { get; set; }
+		public int RespostaVagaId { get; set; }
 	}
 }

@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SessionService } from '../services/session.service';
 import { VagasService } from '../services/vagas.service';
 import { SearchComponent } from '../search/search.component';
+import {MatDialog, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import { DetalheVagaDialogComponent } from '../components/detalhe-vaga-dialog/detalhe-vaga-dialog.component';
 
 @Component({
 	selector: 'app-search',
@@ -26,7 +28,8 @@ export class MinhasVagasComponent
 	constructor(private route: ActivatedRoute,  
 				private sessionService: SessionService, 
 				private vagasService: VagasService,
-				private router: Router,)
+				private router: Router,
+				private dialog: MatDialog)
 	{
 		this.usuario = JSON.parse(this.sessionService.getUser());
 		this.tipoUsuario = this.usuario.tipoUsuario;
@@ -38,7 +41,7 @@ export class MinhasVagasComponent
 
 	ngOnInit()
 	{
-		console.log(this.vagasEncontradas._body)
+		console.log("vagas", this.vagasEncontradas)
 	}
 
 	public getEmpresaById(id: string)
@@ -110,5 +113,17 @@ export class MinhasVagasComponent
 			this.searchLoading = false;
 			this.attrEmpresaToVaga();
 		}, 2000);
+	}
+
+	public openDialog(vaga: any) 
+	{
+		const dialogRef = this.dialog.open(DetalheVagaDialogComponent,
+			{
+				data: {idVaga: vaga.id}
+			});
+	
+		dialogRef.afterClosed().subscribe(result => {
+		  console.log(`Dialog result: ${result}`);
+		});
 	}
 }

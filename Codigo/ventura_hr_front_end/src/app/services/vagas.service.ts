@@ -52,4 +52,32 @@ export class VagasService
 
 		return this.http.get(url);
 	}
+
+	public getRespostasVagaByIdVaga(idVaga: number)
+	{
+		let url = this.baseUrl + "respostasvagas/GetAllByIdVaga/" + idVaga;
+
+		return this.http.get(url);
+	}
+
+	public getRespostasCriterioByIdRespostaVaga(idResposta: number)
+	{
+		let url = this.baseUrl + "respostasvagas/GetRespostasCriterioByIdRespostaVaga/" + idResposta;
+
+		return this.http.get(url);
+	}
+
+	public getCandidatoById(id: string)
+	{
+		let url = this.baseUrl + "candidatos/GetCandidatoById/" + id;
+
+		return this.http.get(url);
+	}
+
+	public getRankingList(idResposta: number)
+	{
+		let url = this.baseUrl + "respostasvagas/GetRankingByRespostaVagaId/" + idResposta;
+
+		return this.http.get(url);
+	}
 }

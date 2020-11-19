@@ -1,0 +1,42 @@
+section.ranking-list
+{
+	width: 600px;
+	height: 400px;
+}
+
+.title
+{
+	font-weight: bold;
+    padding-bottom: 5px;
+	border-bottom: 1px solid rgba(0,0,0,.3);
+}
+
+mat-selection-list
+{
+	margin-bottom: 20px;
+}
+
+.table-title
+{
+	display: flex;
+	padding: 0 16px;
+	margin-top: 10px;
+	font-weight: bold;
+	justify-content: space-between;
+}
+
+.table-title p
+{
+	width: 33.333%;
+}
+
+.dados-candidato p
+{
+	margin: 5px;
+}
+
+.dados-candidato p span
+{
+	font-weight: bold;
+	margin-right: 10px;
+}

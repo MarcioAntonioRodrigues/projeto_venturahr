@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { EventsService } from '../services/events.service';
 import { Router } from '@angular/router';
 import { SessionService } from '../services/session.service';
 import { VagasService } from '../services/vagas.service';
