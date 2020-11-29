@@ -3,6 +3,7 @@ import { Vaga } from '../Models/Vaga';
 import { VagasService } from '../services/vagas.service';
 import { SessionService } from '../services/session.service';
 import { Criterio } from '../Models/Criterio';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-cadastro-vagas',
@@ -28,6 +29,8 @@ export class CadastroVagasComponent
 	listaDeCriterios: Array<Criterio> = new Array<Criterio>();
 	valuesList: Array<number> = [1,2,3,4,5];
 	tipoVaga: string;
+	loading: boolean = false;
+	succesMessage: boolean = false;
 	tiposVaga: Array<any> = 
 	[
 		{
@@ -45,7 +48,8 @@ export class CadastroVagasComponent
 	]
 	
 	constructor(private vagasService: VagasService,
-				private sessionService: SessionService)
+				private sessionService: SessionService,
+				private router: Router)
 	{
 		this.empresa = JSON.parse(this.sessionService.getUser());
 		this.vaga.IdEmpresa = this.empresa.id;
@@ -55,12 +59,18 @@ export class CadastroVagasComponent
 
 	public saveVaga()
 	{
+		this.loading = true;
 		this.vaga.TipoVaga = parseInt(this.tipoVaga);
-		console.log("vaga:", this.vaga)
 		this.vagasService.saveVaga(this.vaga).subscribe(
 			res=>
 			{
-				console.log("res: ", res);
+				this.loading = false;
+				this.succesMessage = true;
+				setTimeout(() => {
+					this.succesMessage = false;
+					return this.router.navigate(['/home'])
+				}, 1000);
+
 			}
 		);
 	}

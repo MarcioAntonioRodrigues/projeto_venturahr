@@ -87,5 +87,20 @@
 				Cadastrar
 			</button>
 		</form>
+		<div *ngIf="loading" class="loading">
+			<div>
+				<mat-spinner></mat-spinner>
+				<p>
+					Salvando Vaga...
+				</p>
+			</div>
+		</div>
+		<div *ngIf="successMessage" class="successMessage">
+			<div>
+				<p>
+					Usuário cadastrado com sucesso!
+				</p>
+			</div>
+		</div>
 	</section>
 </article>

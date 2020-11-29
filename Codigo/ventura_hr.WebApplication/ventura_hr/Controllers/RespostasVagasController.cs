@@ -86,6 +86,7 @@ namespace ventura_hr.WebApplication.Controllers
 		[Route("GetRankingByRespostaVagaId/{vagaId}")]
 		public List<RankingDto> GetRankingByRespostaVagaId(int vagaId)
 		{
+			Empresa emp = new Empresa();
 			List<RankingDto> rankingList = new List<RankingDto>();
 			List<RespostaVaga> respostasList = this.Context.RespostaVagas
 				.Where(r => r.IdVaga.Equals(vagaId)).ToList();
@@ -98,7 +99,7 @@ namespace ventura_hr.WebApplication.Controllers
 				Candidato c = Context.Candidatos
 				.Where(c => c.Id.Equals(r.IdCandidato)).FirstOrDefault();
 
-				float media = CalcularMedia(respCriterio);
+				float media = emp.CalcularMedia(respCriterio);
 				item.Candidato = c;
 				item.Media = media;
 
@@ -107,23 +108,5 @@ namespace ventura_hr.WebApplication.Controllers
 			return rankingList;
 		}
 
-		[Route("CalcularMedia/{respostaCriterio}")]
-		public float CalcularMedia(List<RespostaCriterio> respostaCriterio)
-		{
-			float multiplicacao = 0;
-			float soma = 0;
-			float mediaPonderada = 0;
-
-			respostaCriterio.ForEach(c =>
-
-				multiplicacao += c.PMD * c.Peso
-			);
-			respostaCriterio.ForEach(c =>
-
-				soma += c.Peso
-			);
-			mediaPonderada = multiplicacao / soma;
-			return mediaPonderada;
-		}
 	}
 }

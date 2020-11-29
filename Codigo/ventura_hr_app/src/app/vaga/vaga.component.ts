@@ -1,11 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { RespostaVagaComponent } from '../resposta-vaga/resposta-vaga.component';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+registerLocaleData(ptBr)
 
 @Component({
   selector: 'app-vaga',
   templateUrl: './vaga.component.html',
   styleUrls: ['./vaga.component.scss'],
+  providers: [ {provide: LOCALE_ID, useValue: 'pt'}]
 })
 export class VagaComponent implements OnInit 
 {
